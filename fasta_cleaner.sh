@@ -1,6 +1,6 @@
 #!/bin/bash
 AUTHOR='Bruno Gomez-Gil, Lab. Genomica Microbiana, CIAD.'
-LINK='https://github.com/GenomicaMicrob/fasta_renamer'
+LINK='https://github.com/GenomicaMicrob/fasta_cleaner'
 NAME='fasta_cleaner'
 VER='v0.0.1' # script for github
 REV='Feb. 15, 2018'
