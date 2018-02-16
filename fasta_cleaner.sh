@@ -3,7 +3,7 @@ AUTHOR='Bruno Gomez-Gil, Lab. Genomica Microbiana, CIAD.'
 LINK='https://github.com/GenomicaMicrob/fasta_cleaner'
 NAME='fasta_cleaner'
 VER='v0.0.1' # script for github
-REV='Feb. 15, 2018'
+REV='Feb. 16, 2018'
 DEP='none'
 TODO='Not much'
 
@@ -133,7 +133,7 @@ case $character in
 			awk 'BEGIN {RS = ">" ; FS = "\n" ; ORS = ""} $2 {print ">"$0}' $SAMPLE.fna > tmp && mv tmp $SAMPLE.fna # Deletes empty fasta sequences
 			awk '/^>/{print s? s"\n"$0:$0;s="";next}{s=s sprintf("%s",$0)}END{if(s)print s}' $SAMPLE.fna > tmp && mv tmp $SAMPLE.fna # converts a multiline sequence to just one line
 			SEQS=$(grep -c ">" $SAMPLE.fna | sed -r ':L;s=\b([0-9]+)([0-9]{3})\b=\1,\2=g;t L') # counts number of sequences and displays them with thousand comma separators
-			#rm -f *.fasta
+			rm -f *.fasta
 			echo "File $f with $NORIG_SEQS sequences was processed and saved as $SAMPLE.fna with $SEQS clean sequences."
 		done
 		echo
